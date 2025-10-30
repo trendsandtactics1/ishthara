@@ -19,23 +19,22 @@ const Home = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          {/* ✅ Use your local video file */}
+          {/* ✅ Local video file */}
           <source src="/homehero.mp4" type="video/mp4" />
         </video>
-        
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/85 to-primary/95" />
-        
+
+        {/* ❌ Removed gradient overlay */}
+
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 animate-fade-in">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            <span className="italic text-primary-foreground/90">Leading in</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white drop-shadow-lg">
+            <span className="italic opacity-90">Leading in</span>
             <br />
-            <span className="text-primary-foreground">Transformational</span>
+            <span>Transformational</span>
             <br />
-            <span className="text-accent drop-shadow-lg">FOOD EXPERIENCES</span>
+            <span className="text-accent">FOOD EXPERIENCES</span>
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-primary-foreground/95 leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-white/90 leading-relaxed drop-shadow-md">
             We create unforgettable food experiences through innovation, quality,
             and exceptional service
           </p>
@@ -90,7 +89,6 @@ const Home = () => {
                     alt="Corporate" 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 <div className="p-6 sm:p-8">
                   <h4 className="text-xl sm:text-2xl font-bold mb-3 group-hover:text-accent transition-colors">Corporate</h4>
@@ -107,7 +105,6 @@ const Home = () => {
                     alt="University" 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 <div className="p-6 sm:p-8">
                   <h4 className="text-xl sm:text-2xl font-bold mb-3 group-hover:text-accent transition-colors">University</h4>
@@ -124,7 +121,6 @@ const Home = () => {
                     alt="Events" 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 <div className="p-6 sm:p-8">
                   <h4 className="text-xl sm:text-2xl font-bold mb-3 group-hover:text-accent transition-colors">Live Events</h4>
