@@ -117,7 +117,7 @@ const Home = () => {
               <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div className="h-56 sm:h-64 overflow-hidden relative">
                   <img 
-                    src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=500" 
+                    src="/isthara-min.png" 
                     alt="Events" 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
                   />
