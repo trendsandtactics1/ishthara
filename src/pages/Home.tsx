@@ -19,7 +19,8 @@ const Home = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="https://cdn.coverr.co/videos/coverr-cooking-in-a-restaurant-kitchen-5281/1080p.mp4" type="video/mp4" />
+          {/* ✅ Use your local video file */}
+          <source src="/homehero.mp4" type="video/mp4" />
         </video>
         
         {/* Dark Overlay */}
