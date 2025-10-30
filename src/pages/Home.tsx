@@ -22,32 +22,42 @@ const Home = () => {
           <source src="/homehero.mp4" type="video/mp4" />
         </video>
 
-        {/* Top-Bright / Bottom-Dark Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-black/20 to-black/80" />
-
-        {/* Hero Content */}
-        <div className="relative z-10 container mx-auto px-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]">
-            <span className="block text-lg sm:text-xl font-medium text-yellow-400 tracking-widest mb-2">
-              PROVIDING
-            </span>
-            <span className="italic text-yellow-400">Transformational</span>
-            <br />
-            <span className="text-white">FOOD EXPERIENCES</span>
-          </h1>
-          <p className="text-white/90 text-base sm:text-lg md:text-xl mb-10 max-w-3xl mx-auto">
-            for CORPORATES • UNIVERSITIES • LIVE EVENTS • FOODCOURTS
-          </p>
-
-          <Link to="/contact">
-            <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded-full px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
-              Contact Us <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
+        {/* Visibility overlays (no color wash on top half) */}
+        <div className="pointer-events-none absolute inset-0">
+          {/* Top->Bottom fade: keep top bright, bottom dark */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-black/55 to-black/85" />
+          {/* Center focus darkener for text area */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.6)_0%,rgba(0,0,0,0.0)_65%)]" />
         </div>
 
-        {/* Optional bottom fade with subtle curve */}
-        <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white/30 to-transparent rounded-t-[2rem]" />
+        {/* Hero Content (mobile gets a tiny blur card for extra contrast) */}
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="mx-auto max-w-5xl rounded-2xl bg-black/25 backdrop-blur-[1.5px] p-5 sm:bg-transparent sm:backdrop-blur-0 sm:p-0">
+            <h1 className="font-bold leading-tight tracking-tight text-white text-[clamp(2rem,6vw,4.75rem)] drop-shadow-[0_3px_14px_rgba(0,0,0,0.9)]">
+              <span className="block text-[clamp(0.9rem,2.2vw,1.1rem)] font-semibold text-yellow-400/95 tracking-[0.18em] mb-2">
+                PROVIDING
+              </span>
+              <span className="italic text-yellow-400">Transformational</span>
+              <br />
+              <span className="text-white">FOOD EXPERIENCES</span>
+            </h1>
+
+            <p className="mt-3 sm:mt-5 text-white/95 text-[clamp(1rem,2.2vw,1.3rem)] leading-relaxed max-w-3xl mx-auto drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
+              for CORPORATES • UNIVERSITIES • LIVE EVENTS • FOODCOURTS
+            </p>
+
+            <div className="mt-6 sm:mt-8">
+              <Link to="/contact">
+                <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded-full px-8 sm:px-10 py-5 sm:py-6 text-[clamp(1rem,2vw,1.125rem)] shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.03]">
+                  Contact Us <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Soft edge at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white/25 to-transparent rounded-t-[1.5rem]" />
       </section>
 
       {/* ================= STATS SECTION ================= */}
@@ -96,7 +106,7 @@ const Home = () => {
               },
               {
                 to: "/university",
-                img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=900",
+                img: "isthara-min.png",
                 title: "University",
                 desc: "Nourishing student life with delicious campus dining",
               },
@@ -145,7 +155,7 @@ const Home = () => {
             exceptional dining experiences
           </p>
           <Link to="/careers">
-            <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded-full px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+            <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded-full px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.03]">
               Explore Careers <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
